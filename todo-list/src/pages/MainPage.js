@@ -11,7 +11,8 @@ function MainPage(){
       <Container>
          <h1>Assignment 2: John's ToDo List</h1>
         <Row >
-            <Col>
+
+            <Col lg="4" >
                <ItemCreator></ItemCreator>
             </Col>
 
