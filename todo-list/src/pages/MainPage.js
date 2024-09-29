@@ -1,13 +1,16 @@
 import {Container, Row, Col} from 'react-bootstrap';
 import ToDoItem from '../component/ToDoItem';
 import ItemCreator from '../component/ItemCreator';
+import "../css/MainPage.css";
 
 
 
 function MainPage(){
     return (
+     
       <Container>
-        <Row>
+         <h1>Assignment 2: John's ToDo List</h1>
+        <Row >
             <Col>
                <ItemCreator></ItemCreator>
             </Col>
