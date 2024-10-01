@@ -13,7 +13,7 @@ function MainPage(){
         <Row >
 
             <Col lg="4" >
-               <ItemCreator></ItemCreator>
+               <ItemCreator/>
             </Col>
 
             <Col>

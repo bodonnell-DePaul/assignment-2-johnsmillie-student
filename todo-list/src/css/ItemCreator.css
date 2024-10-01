@@ -1,9 +1,12 @@
 form{
-  background-color: aquamarine;
-  padding: 10px;
-  border-radius: 7px;
+  
  }
 
  #submit-button{
   width: 100%;
+}
+#addToDoForm{
+  background-color: aquamarine;
+  padding: 10px;
+  border-radius: 7px;
 }
