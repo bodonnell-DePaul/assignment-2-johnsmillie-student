@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import TodoList from './ToDoList';
+import TodoList from './pages/MainPage';
 
 describe('TodoList Component', () => {
   test('renders without crashing', () => {
@@ -56,16 +56,16 @@ describe('TodoList Component', () => {
   
     let variants = [];
     todoItems.forEach((item) => {
-      //const input = item.querySelector('input');
-      //const dueDate = input.getAttribute('value'); // Assuming due date is stored in a data attribute
-      //const expectedVariant = getVariant(dueDate);
-      //variants.push(expectedVariant);
-      //expect(item).toHaveClass(`list-group-item-${expectedVariant}`);
+      const input = item.querySelector('input');
+      const dueDate = input.getAttribute('value'); // Assuming due date is stored in a data attribute
+      const expectedVariant = getVariant(dueDate);
+      variants.push(expectedVariant);
+      expect(item).toHaveClass(`list-group-item-${expectedVariant}`);
     });
 
     todoTab.forEach((item, index) => {
-     //   const anchor = item.querySelector('a');
-     //   expect(anchor).toHaveClass(`list-group-item-${variants[index]}`);
+       const anchor = item.querySelector('a');
+      expect(anchor).toHaveClass(`list-group-item-${variants[index]}`);
         
   });
 

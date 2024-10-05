@@ -9,7 +9,7 @@ function MainPage(){
     return (
      
       <Container>
-         <h1>Assignment 2: John's ToDo List</h1>
+         <h1>Assignment 2: ToDo List</h1>
         <Row >
 
             <Col lg="4" >

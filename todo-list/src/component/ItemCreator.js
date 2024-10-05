@@ -17,11 +17,11 @@ function ItemCreator(){
         </Form.Text>
       </Form.Group>
       <Form.Group className="mb-4" controlId="formDate">
-        <Form.Label>Date</Form.Label>
+        <Form.Label>Due Date</Form.Label>
         <Form.Control type="date" />
       </Form.Group>
-      <Button variant="primary" type="submit" id='submit-button'>
-        Submit
+      <Button variant="primary" placeholder="Add todo item" type="submit" id='submit-button'>
+        Add Todo
       </Button>
     </Form>
     );
