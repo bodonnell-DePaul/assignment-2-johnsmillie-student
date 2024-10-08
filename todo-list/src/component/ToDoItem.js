@@ -1,57 +1,36 @@
-
-import {Container, Row, Col, ListGroup, Tab} from 'react-bootstrap';
+///John Smillie
+// CSC436 Assignment 2
+import { Row, Col, ListGroup, Tab} from 'react-bootstrap';
 import "../css/ToDoItem.css";
 import todos from "../data/todoItems";
-import Form from 'react-bootstrap/Form';
 
 function ToDoItem(){
     return (
-      <div>
-        <Container>
+        <Tab.Container id="left-tabs-example" defaultActiveKey={getEarliestDueDate(todos).title} >
           <Row>
             <Col lg="4">
-                  {todos.map((item, index) => (
-                  
-                        <Col>
-                           <ListGroup>
-                          <a href="." eventKey={item.title}>
-                            <ListGroup.Item id={getColor(item.dueDate)}>
-                                 {item.title}
-                            </ListGroup.Item>
-                          </a>
-                            </ListGroup>
-                        </Col>
-
-                    ))}
-              </Col>
-              <Col>
-                <Container>
-                
-                   <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-                     <Tab.Content>
-                       <Tab.Pane eventKey="first">
-                         <div contentEditable> 
-                           {getEarliestDueDate(todos)[1]}
-                         </div>
-                       <Form>
-                       {/* <Form.Group className="mb-3" controlId="formContent">
-                          <Form.Control id='tabDescription' type="text" placeholder={getEarliestDueDate(todos)}  as="textarea" rows="7"/>
-                        </Form.Group> */}
-                        <Form.Group className="w-25" controlId="formDate">
-                           <Form.Control  type="date"    />
-                        </Form.Group>
-                     </Form>
-
-                            </Tab.Pane>
-
-                          </Tab.Content>
-                        </Tab.Container>
-                    </Container>
-                    </Col>
-            </Row>
-          </Container>
-      </div>
-
+               <ListGroup>
+                 {todos.map((item, index) => (    
+                     <ListGroup.Item variant={getColor(item.dueDate)} eventKey={item.title} action value={item} >
+                          {item.title}
+                     </ListGroup.Item>
+                 ))}
+                 </ListGroup>
+            </Col>
+            <Col lg="8">
+                 <Tab.Content>
+                 {todos.map((item2, index2) => (    
+                   <Tab.Pane key={index2}  eventKey={item2.title}>
+                     <div contentEditable> 
+                       {item2.description}
+                     </div>
+                      <input type="date" value={item2.dueDate}  />
+                    </Tab.Pane>
+                  ))}  
+                 </Tab.Content>
+            </Col>
+          </Row>
+        </Tab.Container>
 
     );
 }
@@ -82,14 +61,28 @@ function getColor(item) {
 function getEarliestDueDate(todos){
   let min = new Date( todos[0].dueDate);
 
-  let res = todos[0].description; 
+  let res = todos[0]; 
   for(let i = 1; i < todos.length; i++){
-   
-    if(new Date(todos[i].dueDate) < min){
-      min = todos[i].dueDate;
-      res = todos[i].description;
+   console.log(min)
+   const dDate = new Date(todos[i].dueDate)
+   console.log(dDate)
+    if(dDate < min){
+      min = dDate;
+      res = todos[i];
     }
   }
-  return [min,res];
+  return res;
 }
 export default ToDoItem;
+
+
+
+
+
+/*
+ <Form>
+                        <Form.Group className="w-25" controlId="formDate">
+                           <Form.Control  type="date"   placeholder={new Date(item2.dueDate).getDate} />
+                        </Form.Group>
+                     </Form>
+                     */

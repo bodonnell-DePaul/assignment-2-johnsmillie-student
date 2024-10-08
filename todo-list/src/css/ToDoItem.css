@@ -1,5 +1,5 @@
-:root{
-  --danger: hsl(0, 100%, 76%);
+/*:root{
+ 
   --warning: #d8df75;
   --success: #4dbd6f;
   --primary: #5885c4;
@@ -11,14 +11,12 @@
   text-decoration: none;
   border: none;
   border-radius: 7px;
-}
+}*/
 
 
-#danger{
-  background-color: var(--danger);
-}
 
-#primary{
+
+/*#primary{
   background-color: var(--primary);
 }
 
@@ -31,4 +29,4 @@
 
 #tabDescription{
   border: none;
-}
+}*/

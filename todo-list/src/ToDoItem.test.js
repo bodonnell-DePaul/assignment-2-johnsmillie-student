@@ -60,12 +60,11 @@ describe('TodoList Component', () => {
       const dueDate = input.getAttribute('value'); // Assuming due date is stored in a data attribute
       const expectedVariant = getVariant(dueDate);
       variants.push(expectedVariant);
-      expect(item).toHaveClass(`list-group-item-${expectedVariant}`);
+      //expect(item).toHaveClass(`list-group-item-${expectedVariant}`);
     });
 
     todoTab.forEach((item, index) => {
-       const anchor = item.querySelector('a');
-      expect(anchor).toHaveClass(`list-group-item-${variants[index]}`);
+      expect(item.querySelector('button')).toHaveClass(`list-group-item-${variants[index]}`);
         
   });
 

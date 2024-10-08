@@ -10,12 +10,7 @@ function ItemCreator(){
         <Form.Text className="text-muted">
         </Form.Text>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formContent">
-        <Form.Label></Form.Label>
-        <Form.Control type="text" placeholder="Description"  as="textarea" rows={3}/>
-        <Form.Text className="text-muted">
-        </Form.Text>
-      </Form.Group>
+
       <Form.Group className="mb-4" controlId="formDate">
         <Form.Label>Due Date</Form.Label>
         <Form.Control type="date" />
